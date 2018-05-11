@@ -1,0 +1,9 @@
+webApp\config\RootConfig.class
+webApp\web\HomeController.class
+webApp\data\Repository.class
+webApp\config\Initializer.class
+webApp\data\TempRepositoryImpl.class
+webApp\model\Human.class
+webApp\config\WebConfig.class
+webApp\util\WLogger.class
+webApp\web\RegisterController.class
