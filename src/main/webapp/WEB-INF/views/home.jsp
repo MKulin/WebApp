@@ -7,7 +7,7 @@
 <body>
 <h1>Welcome to WebApp</h1>
 <a href="<c:url value="/" />">Login</a> |
-<a href="<c:url value="/register" />">Register</a>
+<a href="<c:url value="/registration" />">Register</a>
 </body>
 </html>
 

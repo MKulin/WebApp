@@ -13,7 +13,6 @@ public class TempRepositoryImpl<T> implements Repository<T> {
     private static List list = new ArrayList<>();
     static {
         list.add(new Human(0, "John"));
-        System.out.println("ADDED HUMAN TO LIST");
     }
 
     @Override
@@ -38,5 +37,12 @@ public class TempRepositoryImpl<T> implements Repository<T> {
     public void delete(T value) {
         list.remove(value);
         WLogger.getLogger().debug("Repository delete...");
+    }
+
+    public Human getByName(String name){
+        return (Human)list.stream()
+                .filter(o -> ((Human) o).getName().equals(name))
+                .findFirst()
+                .get();
     }
 }

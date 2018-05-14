@@ -1,5 +1,8 @@
 package webApp.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Human {
 
     private long id;
@@ -9,24 +12,28 @@ public class Human {
 
     }
 
+    public Human(String name){
+        this.name = name;
+    }
+
     public Human(long id, String name){
         this.id = id;
         this.name = name;
     }
 
-    public long getId(){
+    public long getId() {
         return id;
     }
 
-    public String getName(){
-        return name;
-    }
-
-    public void setId(long id){
+    public void setId(long id) {
         this.id = id;
     }
 
-    public void setName(String name){
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 }
