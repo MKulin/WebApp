@@ -27,6 +27,6 @@ public class RegisterControllerTest {
                 .build();
         mockMvc.perform(get("/registration"))
                 .andExpect(view().name("registration"))
-                .andExpect(model().attributeExists("rep"));
+                .andExpect(model().attributeExists("human"));
     }
 }
