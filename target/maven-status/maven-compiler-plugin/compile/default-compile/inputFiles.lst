@@ -3,7 +3,9 @@
 /home/dz/IdeaProjects/WebApp/src/main/java/webApp/model/Human.java
 /home/dz/IdeaProjects/WebApp/src/main/java/webApp/data/TempRepositoryImpl.java
 /home/dz/IdeaProjects/WebApp/src/main/java/webApp/util/WLogger.java
+/home/dz/IdeaProjects/WebApp/src/main/java/webApp/web/LoginController.java
 /home/dz/IdeaProjects/WebApp/src/main/java/webApp/config/WebConfig.java
 /home/dz/IdeaProjects/WebApp/src/main/java/webApp/data/Repository.java
+/home/dz/IdeaProjects/WebApp/src/main/java/webApp/model/Login.java
 /home/dz/IdeaProjects/WebApp/src/main/java/webApp/web/RegisterController.java
 /home/dz/IdeaProjects/WebApp/src/main/java/webApp/config/Initializer.java

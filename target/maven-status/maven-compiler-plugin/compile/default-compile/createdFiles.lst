@@ -4,6 +4,8 @@ webApp/data/TempRepositoryImpl.class
 webApp/data/Repository.class
 webApp/config/WebConfig.class
 webApp/model/Human.class
+webApp/web/LoginController.class
+webApp/model/Login.class
 webApp/web/HomeController.class
 webApp/config/RootConfig.class
 webApp/util/WLogger.class

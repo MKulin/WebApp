@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login WebApp</title>
+</head>
+<body>
+    Please, fill the fom below to log in...
+    <form method="post" th:object="${login}">
+        <div class="error" th:if="${#fields.hasErrors('*')}">
+            <ul>
+                <li th:each="err : ${#fields.errors()}" th:text="${err}"></li>
+            </ul>
+        </div>
+        <ul>
+            <li><input type="text" th:field="*{username}"></li>
+            <li><input type="password" th:field="*{password}"></li>
+            <li><input type="submit" value="Login"></li>
+        </ul>
+    </form>
+</body>
+</html>

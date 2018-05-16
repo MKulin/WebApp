@@ -26,12 +26,14 @@ public class RegisterController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String register(Model model){
-        model.addAttribute("human", new Human());
+        Human human = new Human();
+        model.addAttribute("human", human);
         return "registration";
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String processRegistration(@ModelAttribute("human") @Valid Human human, Errors errors){
+
+    public String processRegistration(@Valid @ModelAttribute("human") Human human, Errors errors){
         if (errors.hasErrors()){
             return "registration";
         }

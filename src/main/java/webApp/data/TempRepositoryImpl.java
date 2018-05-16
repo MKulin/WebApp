@@ -45,4 +45,9 @@ public class TempRepositoryImpl<T> implements Repository<T> {
                 .findFirst()
                 .get();
     }
+
+    public boolean checkIfUserExists(String name){
+        return list.stream()
+               .anyMatch(o -> ((Human) o).getUsername().equals(name));
+    }
 }

@@ -4,27 +4,24 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Human {
 
     private long id;
 
     @NotNull
-    @Size(min = 3, max = 20, message = "Too short username")
+    @Size(min = 3, max = 20, message = "Username must be at least 3 characters length")
     private String username;
 
     @NotNull
-    @Size(min = 3, max = 20, message = "Too short first name")
+    @Size(min = 3, max = 20, message = "First name must be at least 3 characters length")
     private String firstName;
 
     @NotNull
-    @Size(min = 3, max = 20, message = "Too short last name")
+    @Size(min = 3, max = 20, message = "Last name must be at least 3 characters length")
     private String lastName;
 
     @NotNull
-    @Email
+    @Email(message = "E-mail field has to be in an e-mail format.")
     private String email;
 
     @NotNull
