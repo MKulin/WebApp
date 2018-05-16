@@ -12,15 +12,15 @@ public class Human {
     private long id;
 
     @NotNull
-    @Size(min = 3, max = 20)
+    @Size(min = 3, max = 20, message = "Too short username")
     private String username;
 
     @NotNull
-    @Size(min = 3, max = 20)
+    @Size(min = 3, max = 20, message = "Too short first name")
     private String firstName;
 
     @NotNull
-    @Size(min = 3, max = 20)
+    @Size(min = 3, max = 20, message = "Too short last name")
     private String lastName;
 
     @NotNull
@@ -28,7 +28,7 @@ public class Human {
     private String email;
 
     @NotNull
-    @Size(min = 5, max = 20)
+    @Size(min = 5, max = 20, message = "Too short password")
     private String password;
 
     public Human(){
