@@ -36,7 +36,8 @@ public class LoginController {
             return "login";
         }
         if (repository.checkIfUserExists(login.getUsername())){
-            return "/redirect:" + login.getUsername();
+            model.addAttribute(repository.getByName(login.getUsername()));
+            return "redirect:/" + login.getUsername();
         }
         return "login";
     }
