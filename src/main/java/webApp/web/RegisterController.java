@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import webApp.data.Repository;
 import webApp.data.TempRepositoryImpl;
 import webApp.model.Human;
@@ -44,6 +45,7 @@ public class RegisterController {
     @RequestMapping(method = RequestMethod.POST)
     public String processRegistration(@RequestPart("profileImage") MultipartFile profileImage,
                                       @Valid @ModelAttribute("human") Human human,
+                                      RedirectAttributes model,
                                       Errors errors) {
         if (errors.hasErrors()){
             return "registration";
@@ -66,7 +68,9 @@ public class RegisterController {
             }
         }
         repository.set(human);
-        return "redirect:/" + human.getUsername();
+        model.addAttribute("username", human.getUsername());
+        model.addFlashAttribute(human);
+        return "redirect:/{username}";
     }
 
 

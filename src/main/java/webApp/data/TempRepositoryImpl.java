@@ -41,13 +41,17 @@ public class TempRepositoryImpl<T> implements Repository<T> {
 
     public Human getByName(String name){
         return (Human)list.stream()
-                .filter(o -> ((Human) o).getUsername().equals(name))
+                .filter(o -> ((Human) o)
+                        .getUsername()
+                        .equals(name))
                 .findFirst()
                 .get();
     }
 
     public boolean checkIfUserExists(String name){
         return list.stream()
-               .anyMatch(o -> ((Human) o).getUsername().equals(name));
+               .anyMatch(o -> ((Human) o)
+                       .getUsername()
+                       .equals(name));
     }
 }
