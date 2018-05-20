@@ -1,0 +1,25 @@
+@font-face {
+    font-family: ProximaNova;
+    src: url("../fonts/Proxima Nova Bold.otf")
+}
+.header{
+    background-color: dodgerblue;
+    text-align: center;
+    min-width: 100%;
+    min-height: 150px;
+}
+.welcome{
+    color: white;
+    font-family: ProximaNova, monospace;
+    vertical-align: middle;
+}
+.login{
+    font-size: 35px;
+    margin-left: 30%;
+    color: black;
+}
+.register{
+    font-size: 35px;
+    margin-left: 30%;
+    color: black;
+}

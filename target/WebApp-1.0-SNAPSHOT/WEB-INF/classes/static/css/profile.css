@@ -1,0 +1,12 @@
+@font-face {
+    font-family: ProximaNova;
+    src: url("../../../fonts/Proxima Nova Bold.otf")
+}
+.header{
+    background-color: dodgerblue;
+    text-align: center;
+}
+.welcome{
+    color: white;
+    font-family: ProximaNova, monospace;
+}

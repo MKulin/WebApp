@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>WebApp Profile</title>
+    <script type="text/javascript" src="../static/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/profile.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row header">
+        <div class="col-xl-12">
+            <h1 class="welcome">Welcome to WebApp</h1>
+        </div>
+    </div>
+</div>
+<label th:object="${human}">
+    <span th:text="*{username}"></span>
+</label>
+</body>
+</html>
