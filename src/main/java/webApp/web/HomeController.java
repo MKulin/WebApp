@@ -6,15 +6,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import webApp.data.TempRepositoryImpl;
+import webApp.data.HumanRepositoryImpl;
+import webApp.data.Repository;
 import webApp.model.Human;
 
 @Controller
 @RequestMapping(value = "/")
 public class HomeController {
 
+    private Repository<Human> repository;
+
     @Autowired
-    private TempRepositoryImpl<Human> repository;
+    public HomeController(HumanRepositoryImpl repository) {
+        this.repository = repository;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public String home(){

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import webApp.data.HumanRepositoryImpl;
+import webApp.data.Repository;
 import webApp.data.TempRepositoryImpl;
 import webApp.model.Human;
 import webApp.model.Login;
@@ -18,10 +20,10 @@ import javax.validation.Valid;
 @RequestMapping(value = "/login")
 public class LoginController {
 
-    private TempRepositoryImpl<Human> repository;
+    private Repository<Human> repository;
 
     @Autowired
-    public LoginController(TempRepositoryImpl<Human> repository){
+    public LoginController(HumanRepositoryImpl repository){
         this.repository = repository;
     }
 
@@ -36,11 +38,9 @@ public class LoginController {
         if(errors.hasErrors()){
             return "login";
         }
-        if (repository.checkIfUserExists(login.getUsername())){
             model.addFlashAttribute("human", repository.getByName(login.getUsername()));
             model.addAttribute("username", login.getUsername());
             return "redirect:/{username}";
-        }
-        return "login";
+//        return "login";
     }
 }

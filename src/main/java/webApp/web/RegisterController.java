@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import webApp.data.HumanRepositoryImpl;
 import webApp.data.Repository;
 import webApp.data.TempRepositoryImpl;
 import webApp.model.Human;
@@ -31,7 +32,7 @@ public class RegisterController {
     private Repository<Human> repository;
 
     @Autowired
-    public RegisterController(TempRepositoryImpl<Human> repository){
+    public RegisterController(HumanRepositoryImpl repository){
         this.repository = repository;
     }
 

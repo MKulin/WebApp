@@ -39,8 +39,13 @@ public class TempRepositoryImpl<T> implements Repository<T> {
         WLogger.getLogger().debug("Repository delete...");
     }
 
-    public Human getByName(String name){
-        return (Human)list.stream()
+    @Override
+    public List<T> list() {
+        return null;
+    }
+
+    public T getByName(String name){
+        return (T)list.stream()
                 .filter(o -> ((Human) o)
                         .getUsername()
                         .equals(name))

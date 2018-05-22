@@ -1,29 +1,40 @@
 package webApp.model;
 
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@Entity
+@Table(name = "human")
 public class Human {
 
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(name = "username")
     @NotNull
     @Size(min = 3, max = 20, message = "Username must be at least 3 characters length")
     private String username;
 
+    @Column(name = "firstName")
     @NotNull
     @Size(min = 3, max = 20, message = "First name must be at least 3 characters length")
     private String firstName;
 
+    @Column(name = "lastName")
     @NotNull
     @Size(min = 3, max = 20, message = "Last name must be at least 3 characters length")
     private String lastName;
 
+    @Column(name = "email")
     @NotNull
     @Email(message = "E-mail field has to be in an e-mail format.")
     private String email;
 
+    @Column(name = "password")
     @NotNull
     @Size(min = 5, max = 20, message = "Too short password")
     private String password;
