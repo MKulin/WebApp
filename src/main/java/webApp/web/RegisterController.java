@@ -13,7 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import webApp.data.HumanRepositoryImpl;
 import webApp.data.Repository;
-import webApp.data.TempRepositoryImpl;
 import webApp.model.Human;
 
 import javax.validation.Valid;
@@ -21,9 +20,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 @Controller
 @RequestMapping(value = "/registration")
@@ -32,7 +28,7 @@ public class RegisterController {
     private Repository<Human> repository;
 
     @Autowired
-    public RegisterController(HumanRepositoryImpl repository){
+    public RegisterController(Repository<Human> repository){
         this.repository = repository;
     }
 
@@ -52,6 +48,7 @@ public class RegisterController {
             return "registration";
         }
         if (profileImage != null) {
+            System.out.println(profileImage.getOriginalFilename().toUpperCase());
             try {
                 File f = new File("tmp" + File.separator
                         + human.getUsername()

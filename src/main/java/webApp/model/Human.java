@@ -19,12 +19,12 @@ public class Human {
     @Size(min = 3, max = 20, message = "Username must be at least 3 characters length")
     private String username;
 
-    @Column(name = "firstName")
+    @Column(name = "firstname")
     @NotNull
     @Size(min = 3, max = 20, message = "First name must be at least 3 characters length")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "lastname")
     @NotNull
     @Size(min = 3, max = 20, message = "Last name must be at least 3 characters length")
     private String lastName;

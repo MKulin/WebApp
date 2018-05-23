@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import webApp.data.HumanRepositoryImpl;
 import webApp.data.Repository;
-import webApp.data.TempRepositoryImpl;
 import webApp.model.Human;
 import webApp.model.Login;
 
@@ -23,7 +22,7 @@ public class LoginController {
     private Repository<Human> repository;
 
     @Autowired
-    public LoginController(HumanRepositoryImpl repository){
+    public LoginController(Repository<Human> repository){
         this.repository = repository;
     }
 

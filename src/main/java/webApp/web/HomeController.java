@@ -1,6 +1,7 @@
 package webApp.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +18,7 @@ public class HomeController {
     private Repository<Human> repository;
 
     @Autowired
-    public HomeController(HumanRepositoryImpl repository) {
+    public HomeController(Repository<Human> repository) {
         this.repository = repository;
     }
 
