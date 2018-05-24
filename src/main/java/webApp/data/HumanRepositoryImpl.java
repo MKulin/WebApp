@@ -1,9 +1,12 @@
 package webApp.data;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
 import webApp.model.Human;
 
 import java.util.List;
@@ -28,8 +31,12 @@ public class HumanRepositoryImpl implements Repository<Human> {
     @Override
     @Transactional
     public Human getByName(String name) {
-        Human result = (Human) getSession().createQuery("select * from human where username = '" + name + "'");
-        return result;
+        Query query = getSession().createQuery("from Human where username = '" + name + "'");
+        Human result = (Human) query.list().get(0);
+        if (result != null) {
+            return result;
+        }
+        throw new HibernateException("User " + name + "is not registered");
     }
 
     @Override
@@ -61,6 +68,6 @@ public class HumanRepositoryImpl implements Repository<Human> {
     @Override
     @Transactional
     public List<Human> list() {
-        return getSession().createQuery("from human").list();
+        return getSession().createQuery("from Human").list();
     }
 }

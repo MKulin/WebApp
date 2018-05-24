@@ -22,24 +22,23 @@ public class LoginController {
     private Repository<Human> repository;
 
     @Autowired
-    public LoginController(Repository<Human> repository){
+    public LoginController(Repository<Human> repository) {
         this.repository = repository;
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showLoginForm(Model model){
+    public String showLoginForm(Model model) {
         model.addAttribute("login", new Login());
         return "login";
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String loginProcessing(@Valid @ModelAttribute("login") Login login, Errors errors, RedirectAttributes model){
-        if(errors.hasErrors()){
+    public String loginProcessing(@Valid @ModelAttribute("login") Login login, Errors errors, RedirectAttributes model) {
+        if (errors.hasErrors()) {
             return "login";
         }
-            model.addFlashAttribute("human", repository.getByName(login.getUsername()));
-            model.addAttribute("username", login.getUsername());
-            return "redirect:/{username}";
-//        return "login";
+        model.addFlashAttribute("human", repository.getByName(login.getUsername()));
+        model.addAttribute("username", login.getUsername());
+        return "redirect:/{username}";
     }
 }
