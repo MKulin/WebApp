@@ -23,7 +23,7 @@ public class HumanRepositoryImpl implements Repository<Human> {
 
     @Override
     @Transactional
-    public Human get(long id) {
+    public Human get(@javax.validation.constraints.NotNull String id) {
         Human result = (Human)getSession().get(Human.class, id);
         return result;
     }

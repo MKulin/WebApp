@@ -17,20 +17,20 @@ public class Message {
     private String text;
 
     @Column(name = "author")
-    @NotNull
-    private long author;
+    private String author;
 
     public Message(){
 
     }
 
-    public Message(String text){
-        this.text = text;
+    public Message(String author){
+        this.author = author;
     }
 
-    public Message(long id, String text){
+    public Message(long id, String text, String author){
         this.id = id;
         this.text = text;
+        this.author = author;
     }
 
     public long getId() {
@@ -47,5 +47,13 @@ public class Message {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public @NotNull String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(@NotNull String author) {
+        this.author = author;
     }
 }

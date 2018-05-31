@@ -39,6 +39,6 @@ public class LoginController {
         }
         model.addFlashAttribute("human", repository.getByName(login.getUsername()));
         model.addAttribute("username", login.getUsername());
-        return "redirect:/profile/{username}";
+        return "redirect:/{username}";
     }
 }

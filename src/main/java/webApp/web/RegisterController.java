@@ -68,7 +68,7 @@ public class RegisterController {
         repository.set(human);
         model.addAttribute("username", human.getUsername());
         model.addFlashAttribute(human);
-        return "redirect:/profile/{username}";
+        return "redirect:/{username}";
     }
 
 
