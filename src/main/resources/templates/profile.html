@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>WebApp Profile</title>
+    <script th:src="@{../static/js/jquery.js}"></script>
+    <script th:src="@{../static/js/profile.js}"></script>
 </head>
 <body>
     <h1 class="welcome">Welcome to WebApp</h1>
-
-    <form method="post" th:object="${message}" action="#">
-        <label th:object="${human}">
-            <input type="text" readonly="readonly" th:value="*{username}">
-        </label>
-        <label for="message">Your message:</label>
+    <form id="chatform" method="post" th:object="${message}">
+        <label for="chatform">Your message:</label>
         <input id="message" type="text" th:field="*{text}">
-        <input type="submit">
+        <input type="text" id="author" readonly value="user" th:field="*{author}">
+        <button type="button" onclick="send()">Submit</button>
     </form>
-
+    <input type="text" readonly id="chatHistory">
 </body>
 </html>

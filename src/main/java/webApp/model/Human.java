@@ -12,7 +12,7 @@ public class Human {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private @NotNull String id;
+    private long id;
 
     @Column(name = "username")
     @NotNull
@@ -47,16 +47,16 @@ public class Human {
         this.username = username;
     }
 
-    public Human(@NotNull String id, String username){
+    public Human(long id, String username){
         this.id = id;
         this.username = username;
     }
 
-    public @NotNull String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(@NotNull String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

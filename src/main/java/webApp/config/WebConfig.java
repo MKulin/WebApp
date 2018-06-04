@@ -23,6 +23,7 @@ public class WebConfig implements WebMvcConfigurer {
     public ViewResolver viewResolver(SpringTemplateEngine engine){
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(engine);
+        resolver.setCharacterEncoding("UTF-8");
         return resolver;
     }
 

@@ -1,11 +1,21 @@
 package webApp.config;
 
+import org.springframework.lang.Nullable;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import javax.servlet.Filter;
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletRegistration;
 
 public class Initializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    @Nullable
+    @Override
+    protected Filter[] getServletFilters() {
+        return new Filter[]{new CharacterEncodingFilter()};
+    }
+
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[]{RootConfig.class};

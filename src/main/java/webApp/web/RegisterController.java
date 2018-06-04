@@ -48,7 +48,6 @@ public class RegisterController {
             return "registration";
         }
         if (profileImage != null) {
-            System.out.println(profileImage.getOriginalFilename().toUpperCase());
             try {
                 File f = new File("tmp" + File.separator
                         + human.getUsername()
@@ -65,6 +64,7 @@ public class RegisterController {
                 e.printStackTrace();
             }
         }
+        System.out.println(human.getUsername());
         repository.set(human);
         model.addAttribute("username", human.getUsername());
         model.addFlashAttribute(human);
