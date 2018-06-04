@@ -8,12 +8,26 @@
 </head>
 <body>
     <h1 class="welcome">Welcome to WebApp</h1>
-    <form id="chatform" method="post" th:object="${message}">
+    <!--<form id="chatform" method="post" th:object="${message}">
         <label for="chatform">Your message:</label>
         <input id="message" type="text" th:field="*{text}">
         <input type="text" id="author" readonly value="user" th:field="*{author}">
         <button type="button" onclick="send()">Submit</button>
-    </form>
-    <input type="text" readonly id="chatHistory">
+    </form>-->
+    <tr th:object="${message}">
+        <td>
+            <input type="text" id="message">
+        </td>
+        <td>
+            <input id="author" th:field="*{author}" readonly>
+        </td>
+        <td>
+            <span id="chatHistory"></span>
+        </td>
+        <td>
+            <button type="button" onclick="send()">Submit</button>
+        </td>
+    </tr>
+
 </body>
 </html>
