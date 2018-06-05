@@ -35,7 +35,7 @@ public class ProfileController {
         return "profile";
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/chatMessage", method = RequestMethod.POST)
     public void chatMessage(@ModelAttribute("message") Message message, Model model){
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
                 .getRequestAttributes()).getRequest();
